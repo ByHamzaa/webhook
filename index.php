@@ -1,5 +1,7 @@
 <?php
-$webhookurl = "Webhookurl";
+
+
+$webhookurl = "url";
 
 
 $timestamp = date("c", strtotime("now"));
@@ -8,13 +10,13 @@ $json_data = json_encode([
     "username" => "username",
     "tts" => false,
 
-"content" => "message",
+"content" => "üst mesaj",
 
     "embeds" => [
         [
-            "title" => "Siteden Mesaj;",
+            "title" => "title mesajı;",
             "type" => "rich",
-            "description" => "Embed açıklama",
+            "description" => "açıklama embed",
             "url" => "https://www.csybot.cf",
             "timestamp" => $timestamp,
             "color" => hexdec( "3366ff" ),
@@ -23,7 +25,7 @@ $json_data = json_encode([
                 "icon_url" => "https://images.discordapp.net/avatars/729389049881690143/9e698c392183c795708395e51bd4a2a2.png"
             ],
             "author" => [
-                "name" => "username"
+                "name" => "örnek name author mesajı"
             ]
         ]
     ]
@@ -43,5 +45,5 @@ curl_setopt( $ch, CURLOPT_POSTFIELDS, $json_data);
 
 $response = curl_exec( $ch );
 curl_close( $ch );
-}
+
 ?>
